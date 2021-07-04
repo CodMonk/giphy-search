@@ -14,6 +14,7 @@ interface props {
 export const SearchPanel: React.FC<props> = ({ searchImage })=> {
 
     const [searchText, setText] = useState("");
+    const [buttonStatus,disableButton]=useState(true);
 
     /**
      * Sets the search text state
@@ -21,7 +22,14 @@ export const SearchPanel: React.FC<props> = ({ searchImage })=> {
      */
     const onTexthange=(e: React.ChangeEvent<HTMLInputElement>)=>{
         const value=e.target.value;
-        setText(value)
+        setText(value);
+        if(value.trim()!=""){
+            
+            disableButton(false)
+        }else{
+            disableButton(true)
+        }
+        
     }
   
 
@@ -29,7 +37,7 @@ export const SearchPanel: React.FC<props> = ({ searchImage })=> {
         
         <div>
             <input id="search-input" className="search-input" placeholder="Enter text to search ..." value={searchText} onChange={onTexthange} onKeyPress={(e) => e.key === 'Enter' && searchImage(searchText)}></input>
-            <button id="search-button" className="search-button" onClick={()=>{searchImage(searchText)}}  type="submit" > Search </button>
+            <button disabled={buttonStatus} id="search-button" className="search-button" onClick={()=>{searchImage(searchText)}}  type="submit" > Search </button>
         </div>
     );
 };

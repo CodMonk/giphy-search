@@ -1,5 +1,5 @@
-export interface options {
-  limit: string
+export interface GiphyOptions {
+  limit: Number
   
 }
 export interface ImageType {
@@ -10,8 +10,8 @@ export interface ImageType {
   }
 }
 
-export const defaults: options = {
-  limit: ''
+export const defaults: GiphyOptions = {
+  limit: 10,
 };
 
 

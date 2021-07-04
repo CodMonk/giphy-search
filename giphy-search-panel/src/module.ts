@@ -1,5 +1,16 @@
 import { PanelPlugin } from '@grafana/data';
-import { options, defaults } from './types';
+import { GiphyOptions } from './types';
 import { GiphyPanel } from './GiphyPanel';
 
-export const plugin = new PanelPlugin<options>(GiphyPanel).setDefaults(defaults)
+export const plugin = new PanelPlugin<GiphyOptions>(GiphyPanel)
+.setPanelOptions(builder => {
+    return builder.addNumberInput({
+      path: 'limit',
+      name: 'No of images',
+      description: 'No of images to load from giphy',
+      settings: {
+        min: 10,
+        max: 100,
+      }
+    });
+});

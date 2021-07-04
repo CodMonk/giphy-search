@@ -3,17 +3,18 @@
  * 
  */
 import React, { useState } from 'react';
+import { PanelProps } from '@grafana/data';
 import { SearchPanel } from './SearchPanel';
 import axios from 'axios';
-import { ImageList, ImageType } from './types';
+import { ImageList, ImageType,GiphyOptions } from './types';
 import { GIFY_SEARCH_URL } from './config/urls'
-//interface Props extends PanelProps<options> { }
-import './assets/css/style.css'
 
-export const GiphyPanel: React.FC = () => {
+import './assets/css/style.css'
+interface Props extends PanelProps<GiphyOptions> { }
+export const GiphyPanel: React.FC<Props> = ({ options}) => {
 
   const [imageList, setImageList] = useState<ImageList | null>(null)
-  const limit = 10; 
+  const limit = options.limit?options.limit:10; 
 
   /**
    * This function makes a api call to giphy to get images of search text provided by the user.
