@@ -4,7 +4,14 @@
 
 Grafana panel plugin for searching giphy images
 
+### Search View
+
 ![image](https://user-images.githubusercontent.com/15674997/124380107-93769180-dcd8-11eb-96ff-f96f931785cb.png)
+
+### Image Limits:
+
+![image](https://user-images.githubusercontent.com/15674997/124381932-8f4f7180-dce2-11eb-9b1a-e4abd3111db7.png)
+
 
 ## Getting started
 
@@ -52,8 +59,9 @@ Grafana panel plugin for searching giphy images
    
    This plugin was developed in windows machine, so it might throw linting errors for linux user.
 ## Learn more
-
+   
 - [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
+- [Panel Editor options](https://grafana.com/docs/grafana/latest/packages_api/data/panelplugin)
 - [Grafana documentation](https://grafana.com/docs/)
 - [Grafana Tutorials](https://grafana.com/tutorials/) - Grafana Tutorials are step-by-step guides that help you make the most of Grafana
 - [Grafana UI Library](https://developers.grafana.com/ui) - UI components to help you build interfaces using Grafana Design System
