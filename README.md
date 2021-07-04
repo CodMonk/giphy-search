@@ -1,8 +1,8 @@
-# Grafana panel plugin for searching giphy images
+# giphy-search
 
 [![Build](https://github.com/grafana/grafana-starter-panel/workflows/CI/badge.svg)](https://github.com/grafana/grafana-starter-panel/actions?query=workflow%3A%22CI%22)
 
-This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
+Grafana panel plugin for searching giphy images
 
 ## What is Grafana Panel Plugin?
 
@@ -35,7 +35,14 @@ For more information about panels, refer to the documentation on [Panels](https:
    ```bash
    yarn build
    ```
-
+4. Run docker images
+   ```
+   docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
+   ```
+## Note:
+   It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After building, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
+   
+   This plugin was developed in windows machine, so it might throw linting errors for linux user.
 ## Learn more
 
 - [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
