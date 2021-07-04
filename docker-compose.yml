@@ -1,0 +1,9 @@
+grafana:
+  image: grafana/grafana:latest
+  ports:
+    - "3000:3000"
+  volumes:
+    - ./grafana.ini:/etc/grafana/grafana.ini
+    - ./:/var/lib/grafana/plugins
+    
+    
