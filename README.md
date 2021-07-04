@@ -36,7 +36,13 @@ Grafana panel plugin for searching giphy images
    ```
    ### Linux:
    ```
-   docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
+    docker run -d \
+   -p 3000:3000 \
+   -v  "$(pwd)":/var/lib/grafana/plugins \
+   --name=grafana \
+   -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" \
+    grafana/grafana
+
    ```
    
 ## Note:
