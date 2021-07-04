@@ -22,3 +22,6 @@
     margin-left: 5px;
 
 }
+button.search-button:disabled {
+    opacity: 0.3;
+}
