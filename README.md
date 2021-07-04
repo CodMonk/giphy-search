@@ -40,7 +40,7 @@ For more information about panels, refer to the documentation on [Panels](https:
    docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
    ```
 ## Note:
-   It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After building, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
+   It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After build completes, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
    
    This plugin was developed in windows machine, so it might throw linting errors for linux user.
 ## Learn more
