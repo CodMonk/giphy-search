@@ -44,7 +44,7 @@ export const GiphyPanel: React.FC<Props> = ({ options}) => {
         <SearchPanel searchImage={searchImages}></SearchPanel>
       </div>
       <div id="imageContainer" className="image-container">
-        {imageList ? imageList.data.map((image) => { return <img className="image" src={image.url}></img> }) : ""}
+        {imageList && imageList.data.length? imageList.data.map((image) => { return <img className="image" src={image.url}></img> }) : "No image available for entered text"}
       </div>
     </div>
   );
