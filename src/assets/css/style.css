@@ -1,0 +1,24 @@
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-y: scroll;
+    height: 300px;
+    
+}
+.image {
+    padding:10px
+}
+.search-input{
+    width: 500px;
+    padding: 10px;
+}
+.search-button {
+    background-color: rgb(4, 103, 196);
+    padding: 10px;
+    color: white;
+    width: 100px;
+    margin-left: 5px;
+
+}
