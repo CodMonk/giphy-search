@@ -4,11 +4,18 @@
 
 Grafana panel plugin for searching giphy images
 
-## What is Grafana Panel Plugin?
+### Search View
 
-Panels are the building blocks of Grafana. They allow you to visualize data in different ways. While Grafana has several types of panels already built-in, you can also build your own panel, to add support for other visualizations.
+![image](https://user-images.githubusercontent.com/15674997/124380107-93769180-dcd8-11eb-96ff-f96f931785cb.png)
 
-For more information about panels, refer to the documentation on [Panels](https://grafana.com/docs/grafana/latest/features/panels/panels/)
+### Image Limits:
+
+![image](https://user-images.githubusercontent.com/15674997/124381932-8f4f7180-dce2-11eb-9b1a-e4abd3111db7.png)
+
+## prerequisite
+ - NodeJS16
+ - yarn package maneger
+ - reactjs 17 
 
 ## Getting started
 
@@ -36,16 +43,29 @@ For more information about panels, refer to the documentation on [Panels](https:
    yarn build
    ```
 4. Run docker images
+   ### Windows:
    ```
    docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
    ```
+   ### Linux:
+   ```
+    docker run -d \
+   -p 3000:3000 \
+   -v  "$(pwd)":/var/lib/grafana/plugins \
+   --name=grafana \
+   -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" \
+    grafana/grafana
+
+   ```
+   
 ## Note:
-   It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After building, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
+   It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After build completes, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
    
    This plugin was developed in windows machine, so it might throw linting errors for linux user.
 ## Learn more
-
+   
 - [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
+- [Panel Editor options](https://grafana.com/docs/grafana/latest/packages_api/data/panelplugin)
 - [Grafana documentation](https://grafana.com/docs/)
 - [Grafana Tutorials](https://grafana.com/tutorials/) - Grafana Tutorials are step-by-step guides that help you make the most of Grafana
 - [Grafana UI Library](https://developers.grafana.com/ui) - UI components to help you build interfaces using Grafana Design System
