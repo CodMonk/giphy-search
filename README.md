@@ -12,6 +12,10 @@ Grafana panel plugin for searching giphy images
 
 ![image](https://user-images.githubusercontent.com/15674997/124381932-8f4f7180-dce2-11eb-9b1a-e4abd3111db7.png)
 
+## prerequisite
+ - NodeJS16
+ - yarn package maneger
+ - reactjs 17 
 
 ## Getting started
 
