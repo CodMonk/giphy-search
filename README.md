@@ -4,6 +4,8 @@
 
 Grafana panel plugin for searching giphy images
 
+![image](https://user-images.githubusercontent.com/15674997/124380107-93769180-dcd8-11eb-96ff-f96f931785cb.png)
+
 ## Getting started
 
 1. Install dependencies
