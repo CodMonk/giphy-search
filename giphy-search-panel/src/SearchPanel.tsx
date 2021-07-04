@@ -11,7 +11,7 @@ import React,{useState} from 'react';
 interface props {
     searchImage: Function;
 }
-export const SearchPanel: React.FC<props> = ({ searchImage })=> {
+export const SearchPanel: React.FC<props> = ({ searchImage})=> {
 
     const [searchText, setText] = useState("");
     const [buttonStatus,disableButton]=useState(true);

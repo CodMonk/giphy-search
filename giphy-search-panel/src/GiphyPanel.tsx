@@ -11,9 +11,11 @@ import { GIFY_SEARCH_URL } from './config/urls'
 
 import './assets/css/style.css'
 interface Props extends PanelProps<GiphyOptions> { }
-export const GiphyPanel: React.FC<Props> = ({ options}) => {
 
+export const GiphyPanel: React.FC<Props> = ({ options}) => {
+  
   const [imageList, setImageList] = useState<ImageList | null>(null)
+
   const limit = options.limit?options.limit:10; 
 
   /**
@@ -21,6 +23,7 @@ export const GiphyPanel: React.FC<Props> = ({ options}) => {
    * @param searchText | Text to be searched on giphy
    */
   const searchImages = async (searchText: string) => {
+   
     try {
       if(searchText){
         const resp = await axios.get(`${GIFY_SEARCH_URL}&q=${searchText}&limit=${limit}`)
@@ -39,12 +42,15 @@ export const GiphyPanel: React.FC<Props> = ({ options}) => {
   }
 
   return (
+   
     <div>
       <div >
         <SearchPanel searchImage={searchImages}></SearchPanel>
       </div>
       <div id="imageContainer" className="image-container">
-        {imageList && imageList.data.length? imageList.data.map((image) => { return <img className="image" src={image.url}></img> }) : "No image available for entered text"}
+        {imageList && imageList.data.length ? imageList.data.map((image) => 
+          { return <img className="image" src={image.url}></img> }) : 
+          imageList===null?"":"No image available for entered text"}
       </div>
     </div>
   );
