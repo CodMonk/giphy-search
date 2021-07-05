@@ -19,7 +19,7 @@ Grafana panel plugin for searching giphy images
 
 ## Getting started
 
-1. Install dependencies
+1. Go to `giphy-search-panel` from root directory and install dependencies
 
    ```bash
    yarn install
@@ -42,7 +42,7 @@ Grafana panel plugin for searching giphy images
    ```bash
    yarn build
    ```
-4. Run docker images
+4. Go to root directory and run docker images as :
    ### Linux:
    ```
     docker run -d \
