@@ -43,10 +43,6 @@ Grafana panel plugin for searching giphy images
    yarn build
    ```
 4. Run docker images
-   ### Windows:
-   ```
-   docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
-   ```
    ### Linux:
    ```
     docker run -d \
@@ -55,13 +51,16 @@ Grafana panel plugin for searching giphy images
    --name=grafana \
    -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" \
     grafana/grafana
-
    ```
+   ### Windows:
+   ```
+   docker run -d -p 3000:3000 -v  %cd%:/var/lib/grafana/plugins --name=grafana -e "GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=cod-giphy-search" grafana/grafana
+   ```
+
    
 ## Note:
    It's a unsigned grafana plugin. By default grafana doesn't allow unsigned plugin to exeute. if docker doesn't work then copy the `giphy-search-panel` into grafana's plugin directory and build the plugin there using `yarn build`. After build completes, set the grafana configuration variable as `allow_loading_unsigned_plugins ="cod-giphy-search"` and restart the grafana to load the plugin.
-   
-   This plugin was developed in windows machine, so it might throw linting errors for linux user.
+
 ## Learn more
    
 - [Build a panel plugin tutorial](https://grafana.com/tutorials/build-a-panel-plugin)
