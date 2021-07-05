@@ -6,7 +6,7 @@ Grafana panel plugin for searching giphy images
 
 ### Search View
 
-![image](https://user-images.githubusercontent.com/15674997/124380107-93769180-dcd8-11eb-96ff-f96f931785cb.png)
+![image](https://user-images.githubusercontent.com/15674997/124464821-4666ee00-ddb2-11eb-9d52-ac16aae012d3.png)
 
 ### Image Limits:
 
